@@ -13,7 +13,12 @@ const SERVER = http.createServer((req , res)=>{
     //triming slashes from path {fist & last slash}
     var trimmedPath = path.replace(/^\/+|\/+$/g , '');
 
+    //Getting method of incomming http requests
+    var method = req.method.toLowerCase();
 
+    // Loging Method
+    console.log('Request recived with Method: ' , method);
+    
     res.end("Hello World");
 });
 
