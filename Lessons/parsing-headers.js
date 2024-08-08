@@ -11,16 +11,19 @@ const SERVER = http.createServer((req , res)=>{
     // getting query string as object
     var queryStringObject = parsedURL.query;
 
-    //logging Query String Object
-    console.log('Query String:' , queryStringObject);
-
     //Getting Path from parsedURL
     var path = parsedURL.path;
+
     //triming slashes from path {fist & last slash}
     var trimmedPath = path.replace(/^\/+|\/+$/g , '');
 
     //Getting method of incomming http requests
     var method = req.method.toLowerCase();
+
+    // Geting Header object
+    var headers = req.headers;
+    //Logging Headers
+    console.log("Request Comes with Headers: " , headers);
 
   
     
